@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey to Forever Love | Rebel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .handwriting {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        .heartbeat {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .float {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #ff6b6b;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff6b6b; }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .love-letter {
+            background: url('https://images.unsplash.com/photo-1519741497674-611481863552');
+            background-size: cover;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        .love-letter:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.9);
+            border-radius: 1rem;
+            z-index: 0;
+        }
+        
+        .love-letter-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: #fff1f2;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            width: 0%;
+            transition: width 0.6s ease;
+            border-radius: 12px;
+        }
+        
+        .memory-card {
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .memory-card:hover {
+            transform: rotateY(10deg) scale(1.05);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            opacity: 0;
+            z-index: 9999;
+            animation: confetti 5s ease-in-out;
+        }
+        
+        @keyframes confetti {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .ring-spin {
+            animation: ringSpin 2s ease-in-out infinite;
+        }
+        
+        @keyframes ringSpin {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-20deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-heart {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-heart:hover {
+            box-shadow: 0 0 30px rgba(255, 107, 107, 0.8);
+        }
+        
+        .btn-heart:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255,255,255,.7);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn-heart:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(25, 25);
+                opacity: 0;
+            }
+        }
+        
+        #password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(255, 107, 107, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        #password-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 450px;
+            width: 95%;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 107, 107, 0.5);
+        }
+        
+        .text-input {
+            border: 2px solid #ffe4e6;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .text-input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+        
+        .dropdown {
+            border: 2px solid #ffe4e6;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            background-color: white;
+            transition: border-color 0.3s;
+        }
+        
+        .dropdown:focus {
+            border-color: #ff6b6b;
+        }
+        
+        .guestbook-entry {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .countdown-box {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            min-width: 80px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Password Protection Overlay -->
+    <div id="password-overlay">
+        <div id="password-form" class="shadow-2xl">
+            <h2 class="text-3xl font-bold mb-6 handwriting text-pink-600">Welcome to Our Journey 💖</h2>
+            <p class="mb-6 text-gray-700">Enter our special code (hint: it’s our vibe!) to unlock our love story:</p>
+            <input type="password" id="password-input" class="text-input" placeholder="Our secret code...">
+            <button id="password-submit" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-medium transition">
+                Unlock Our Story 💞
+            </button>
+            <p id="password-error" class="text-red-500 mt-3 hidden">Oops, that’s not it! Try again or DM me.</p>
+        </div>
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-sweet.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Music Control -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="musicToggle" class="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white flex items-center justify-center shadow-xl hover:bg-pink-600 transition">
+            <i class="fas fa-music text-2xl"></i>
+        </button>
+    </div>
+    
+    <!-- Landing Page -->
+    <section id="landing" class="section bg-gray-900 text-white hidden">
+        <div class="parallax bg-[url('https://images.unsplash.com/photo-1516728778615-2d590f38ef3f')]"></div>
+        <div class="bg-overlay"></div>
+        <div class="content text-center px-6 max-w-5xl mx-auto fade-in">
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 handwriting">My Jaan 💖</h1>
+            <p class="text-2xl md:text-3xl mb-10">This is the story of our love...</p>
+            <button id="beginBtn" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-10 py-5 rounded-full text-2xl font-medium transition transform hover:scale-110 shadow-2xl">
+                Begin Our Journey <i class="fas fa-heart ml-3 heartbeat"></i>
+            </button>
+        </div>
+        
+        <!-- Floating Hearts -->
+        <div id="heartsContainer"></div>
+    </section>
+    
+    <!-- Memory Lane - Questions -->
+    <section id="memory-lane" class="section bg-gradient-to-br from-pink-100 to-purple-100 hidden">
+        <div class="content max-w-5xl mx-auto px-6 w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 handwriting text-pink-600">Our Memory Lane 💞</h2>
+                <p class="text-xl text-gray-600">Let’s relive our most magical moments together...</p>
+            </div>
+            
+            <div class="progress-container mb-12">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            
+            <!-- Question 1 -->
+            <div id="question1" class="memory-card bg-white p-10 rounded-2xl shadow-xl mb-10">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1505840717430-8829e695996c" alt="Our First Date" class="w-full h-56 object-cover rounded-xl shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-10">
+                        <h3 class="text-2xl font-semibold mb-6">What was the moment you knew I was your forever?</h3>
+                        <div class="space-y-4">
+                            <button class="answer-btn w-full text-left bg-pink-50 hover:bg-pink-200 p-4 rounded-xl transition text-lg" data-answer="1">Our first date 💕</button>
+                            <button class="answer-btn w-full text-left bg-pink-50 hover:bg-pink-200 p-4 rounded-xl transition text-lg" data-answer="2">A late-night talk 🌙</button>
+                            <button class="answer-btn w-full text-left bg-pink-50 hover:bg-pink-200 p-4 rounded-xl transition text-lg" data-answer="3">The way you made me laugh 😊</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div id="question2" class="memory-card bg-white p-10 rounded-2xl shadow-xl mb-10 hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Our Adventure" class="w-full h-56 object-cover rounded-xl shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-10">
+                        <h3 class="text-2xl font-semibold mb-6">Which adventure stole your heart?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <button class="answer-btn bg-pink-50 hover:bg-pink-200 p-4 rounded-xl transition h-full">
+                                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e206" alt="Beach Getaway" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <span>Our beach getaway 🏖️</span>
+                            </button>
+                            <button class="answer-btn bg-pink-50 hover:bg-pink-200 p-4 rounded-xl transition h-full">
+                                <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f" alt="Fancy Dinner" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <span>That fancy dinner 🍷</span>
+                            </button>
+                            <button class="answer-btn bg-pink-50 hover:bg-pink-200 p-4 rounded-xl transition h-full">
+                                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819" alt="Concert" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <span>The concert we vibed at 🎶</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div id="question3" class="memory-card bg-white p-10 rounded-2xl shadow-xl mb-10 hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Us Smiling" class="w-full h-56 object-cover rounded-xl shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-10">
+                        <h3 class="text-2xl font-semibold mb-6">What’s one thing you adore about us?</h3>
+                        <textarea id="loveAboutUs" class="text-input" rows="4" placeholder="Pour your heart out, my love... 💖"></textarea>
+                        <button id="submitTextAnswer" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-medium transition mt-4">
+                            Submit Answer 💌
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div id="question4" class="memory-card bg-white p-10 rounded-2xl shadow-xl mb-10 hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60b66" alt="Our Song" class="w-full h-56 object-cover rounded-xl shadow-lg">
+                    </div>
+                    <div class="md:w-2/3 md:pl-10">
+                        <h3 class="text-2xl font-semibold mb-6">What song is our love’s anthem?</h3>
+                        <select id="ourSong" class="dropdown text-lg">
+                            <option value="">Select our song 🎵</option>
+                            <option value="song1">Tum Hi Ho - Aashiqui 2</option>
+                            <option value="song2">Pehla Nasha - Jo Jeeta Wohi Sikandar</option>
+                            <option value="song3">Je Tu Mera Humdard Hai - Ek Villain</option>
+                            <option value="song4">Dil Diyan Gallan - Tiger Zinda Hai</option>
+                            <option value="other">Other (type below)</option>
+                        </select>
+                        <div id="otherSongContainer" class="hidden mt-4">
+                            <input type="text" id="otherSong" class="text-input" placeholder="Name our special song...">
+                        </div>
+                        <button id="submitSongAnswer" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-medium transition mt-4">
+                            Submit Answer 🎶
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Response to Answers -->
+            <div id="answerResponse" class="bg-pink-50 p-8 rounded-2xl shadow-xl hidden">
+                <div class="flex items-start">
+                    <div class="mr-6 text-pink-500 text-3xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div>
+                        <p id="responseText" class="text-lg text-gray-700"></p>
+                    </div>
+                </div>
+                <button id="nextQuestionBtn" class="mt-6 btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-medium transition">
+                    Continue Our Journey <i class="fas fa-arrow-right ml-3"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Love Letter -->
+    <section id="love-letter-section" class="section bg-gradient-to-br from-purple-200 to-pink-200 hidden">
+        <div class="content max-w-4xl mx-auto px-6 w-full">
+            <div class="love-letter">
+                <div class="love-letter-content">
+                    <h2 class="text-4xl font-bold mb-8 handwriting text-center text-pink-600">My Dearest Jaan 💕</h2>
+                    
+                    <div id="typedText" class="text-lg leading-relaxed">
+                        <p class="mb-6">From the moment I saw you, my world changed forever. Your smile lights up my darkest days, and your laughter is my favorite melody. Every memory we’ve created—our late-night talks, silly fights, and stolen glances—has woven our hearts closer together.</p>
+                        <p class="mb-6">You’re my safe haven, my partner in every adventure, and the one I dream of every night. I thank the stars for you every day, and I promise to cherish you with every beat of my heart.</p>
+                        <p class="mb-6">This journey is just the beginning, my love. There’s one question I’m dying to ask you, and it’s coming soon...</p>
+                        <p class="handwriting text-3xl text-pink-600 text-center mt-10">With all my love, 💖</p>
+                        <p class="handwriting text-3xl text-pink-600 text-center">Your Zubair</p>
+                    </div>
+                    
+                    <!-- Voiceover Controls -->
+                    <div class="flex justify-center mt-8">
+                        <button id="playVoiceover" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white p-4 rounded-full mr-3">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button id="pauseVoiceover" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white p-4 rounded-full">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="text-center mt-16">
+                        <button id="proposalBtn" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-10 py-4 rounded-full text-2xl font-medium transition transform hover:scale-110 shadow-2xl">
+                            One More Step, My Love 💍
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Countdown to Proposal -->
+    <section id="countdown-section" class="section bg-gradient-to-br from-pink-300 to-purple-300 hidden">
+        <div class="content text-center max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 handwriting text-pink-600">The Moment Is Near 💖</h2>
+            <p class="text-2xl mb-10">My heart’s racing to ask you the biggest question of my life...</p>
+            
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <div id="countdown-days" class="countdown-number">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="countdown-hours" class="countdown-number">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="countdown-minutes" class="countdown-number">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="countdown-seconds" class="countdown-number">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <p class="mt-10 text-xl">Hold my hand, jaan. Our forever is just moments away.</p>
+        </div>
+    </section>
+    
+    <!-- Proposal -->
+    <section id="proposal" class="section bg-gray-900 text-white hidden">
+        <div class="parallax bg-[url('https://player.vimeo.com/external/512299777.sd.mp4?s=1b6e8c7d4b1e2a2b1e7e7e7e7e7e7e7e7e7e7e7e')]"></div>
+        <div class="bg-overlay"></div>
+        <div class="content text-center px-6 max-w-5xl mx-auto">
+            <div class="mb-16">
+                <div class="w-40 h-40 mx-auto ring rounded-full bg-gradient-to-br from-pink-300 to-red-300 flex items-center justify-center shadow-2xl float ring-spin">
+                    <img src="https://images.unsplash.com/photo-1513749877930-0c546d74ed48" alt="Our Ring" class="w-36 h-36 rounded-full object-cover">
+                </div>
+            </div>
+            
+            <h2 class="text-5xl md:text-7xl font-bold mb-8 handwriting text-pink-300">You’re My Everything 💍</h2>
+            <p class="text-2xl md:text-3xl mb-10">I want to spend every sunrise and sunset with you.</p>
+            
+            <div id="proposalQuestion" class="hidden">
+                <h3 class="text-6xl md:text-8xl font-bold mb-10 handwriting text-pink-400">Will You Marry Me? 💖</h3>
+                
+                <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-10 mt-16">
+                    <button id="yesBtn" class="btn-heart bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-full text-2xl font-medium transition transform hover:scale-110 shadow-2xl">
+                        Yes, Forever! 💞
+                    </button>
+                    <button id="noBtn" class="btn-heart bg-gray-600 hover:bg-gray-700 text-white px-10 py-5 rounded-full text-2xl font-medium transition transform hover:scale-110 shadow-2xl">
+                        I Need More Time 😔
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Yes Response -->
+    <section id="yes-response" class="section bg-gradient-to-br from-pink-200 to-purple-200 hidden">
+        <div class="content text-center max-w-5xl mx-auto px-6">
+            <div class="bg-white p-10 md:p-16 rounded-2xl shadow-2xl">
+                <div class="text-9xl text-pink-500 mb-8">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold mb-8 handwriting text-pink-600">You Said Yes! 🎉</h2>
+                <p class="text-2xl text-gray-700 mb-10">My heart is bursting with happiness! This is our forever, jaan. I’ll love you more every single day.</p>
+                
+                <!-- Recap of her answers -->
+                <div class="bg-pink-50 rounded-xl p-8 mb-10 text-left">
+                    <h3 class="text-2xl font-semibold mb-6 handwriting text-pink-600">Our Love Story 💌</h3>
+                    <div id="answerRecap"></div>
+                </div>
+                
+                <!-- Slideshow of your moments -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-semibold mb-6 handwriting text-pink-600">Our Magical Moments 🌟</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d" alt="Moment 1" class="w-full h-40 object-cover rounded-xl shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc" alt="Moment 2" class="w-full h-40 object-cover rounded-xl shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Moment 3" class="w-full h-40 object-cover rounded-xl shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1505840717430-8829e695996c" alt="Moment 4" class="w-full h-40 object-cover rounded-xl shadow-lg">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-pink-50 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl text-pink-500 mb-4">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="font-semibold mb-3 text-lg">My Vow</h3>
+                        <p class="text-gray-600">To love you fiercely through every storm and sunshine.</p>
+                    </div>
+                    <div class="bg-pink-50 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl text-pink-500 mb-4">
+                            <i class="fas fa-laugh-beam"></i>
+                        </div>
+                        <h3 class="font-semibold mb-3 text-lg">Our Happiness</h3>
+                        <p class="text-gray-600">To keep your smile as my biggest treasure.</p>
+                    </div>
+                    <div class="bg-pink-50 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl text-pink-500 mb-4">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="font-semibold mb-3 text-lg">Our Tomorrow</h3>
+                        <p class="text-gray-600">To build a life full of love and endless adventures.</p>
+                    </div>
+                </div>
+                
+                <!-- Guestbook -->
+                <div class="bg-white border border-pink-300 rounded-xl p-8 mb-10">
+                    <h3 class="text-2xl font-semibold mb-6 handwriting text-pink-600">Leave a Message for Us 💬</h3>
+                    <textarea id="guestbookMessage" class="text-input mb-6" rows="4" placeholder="Share your heart, my love..."></textarea>
+                    <button id="submitGuestbook" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-medium transition">
+                        Save Our Memory 💕
+                    </button>
+                    <div id="guestbookEntries" class="mt-8"></div>
+                </div>
+                
+                <!-- Final Actions -->
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <button id="downloadKeepsake" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-medium transition shadow-2xl">
+                        Download Our Keepsake <i class="fas fa-download ml-3"></i>
+                    </button>
+                    <button id="contactMe" class="btn-heart bg-white hover:bg-gray-100 text-pink-600 border border-pink-400 px-8 py-4 rounded-full font-medium transition shadow-2xl">
+                        Contact Me <i class="fab fa-instagram ml-3"></i>
+                    </button>
+                    <button id="restartBtn" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-medium transition shadow-2xl">
+                        Relive This Moment <i class="fas fa-redo ml-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- No Response -->
+    <div id="no-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-10 max-w-lg mx-4 text-center">
+            <div class="text-7xl text-pink-500 mb-6">
+                <i class="fas fa-heart-broken"></i>
+            </div>
+            <h3 class="text-4xl font-bold handwriting text-pink-600 mb-6">I’ll Wait, My Love</h3>
+            <p class="text-lg text-gray-700 mb-8">My heart is yours forever, jaan. Take your time—I’m here when you’re ready.</p>
+            <button id="close-no-modal" class="btn-heart bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-3 rounded-full font-medium transition">
+                Close 💔
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const passwordOverlay = document.getElementById('password-overlay');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const passwordError = document.getElementById('password-error');
+        const beginBtn = document.getElementById('beginBtn');
+        const memoryLaneSection = document.getElementById('memory-lane');
+        const loveLetterSection = document.getElementById('love-letter-section');
+        const countdownSection = document.getElementById('countdown-section');
+        const proposalSection = document.getElementById('proposal');
+        const yesResponseSection = document.getElementById('yes-response');
+        const noModal = document.getElementById('no-modal');
+        const closeNoModalBtn = document.getElementById('close-no-modal');
+        const restartBtn = document.getElementById('restartBtn');
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        const progressBar = document.getElementById('progressBar');
+        const proposalBtn = document.getElementById('proposalBtn');
+        const proposalQuestion = document.getElementById('proposalQuestion');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const answerBtns = document.querySelectorAll('.answer-btn');
+        const answerResponse = document.getElementById('answerResponse');
+        const responseText = document.getElementById('responseText');
+        const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+        const heartsContainer = document.getElementById('heartsContainer');
+        const loveAboutUs = document.getElementById('loveAboutUs');
+        const submitTextAnswer = document.getElementById('submitTextAnswer');
+        const ourSong = document.getElementById('ourSong');
+        const otherSongContainer = document.getElementById('otherSongContainer');
+        const submitSongAnswer = document.getElementById('submitSongAnswer');
+        const answerRecap = document.getElementById('answerRecap');
+        const downloadKeepsake = document.getElementById('downloadKeepsake');
+        const contactMe = document.getElementById('contactMe');
+        const guestbookMessage = document.getElementById('guestbookMessage');
+        const submitGuestbook = document.getElementById('submitGuestbook');
+        const guestbookEntries = document.getElementById('guestbookEntries');
+        const playVoiceover = document.getElementById('playVoiceover');
+        const pauseVoiceover = document.getElementById('pauseVoiceover');
+        const countdownDays = document.getElementById('countdown-days');
+        const countdownHours = document.getElementById('countdown-hours');
+        const countdownMinutes = document.getElementById('countdown-minutes');
+        const countdownSeconds = document.getElementById('countdown-seconds');
+        
+        // Current question tracker
+        let currentQuestion = 1;
+        const totalQuestions = 4;
+        const responses = [
+            "That moment means everything to me too. My heart still skips a beat thinking of it. 💕",
+            "That’s my favorite memory too! Your smile that day is etched in my soul. ✨",
+            "Your words melt my heart. Our bond is my greatest treasure. 💖",
+            "That song is our heartbeat. It sings our love story perfectly. 🎶"
+        ];
+        
+        // User answers storage
+        const userAnswers = {};
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordSet = localStorage.getItem('proposalPassword');
+            if (!passwordSet) {
+                localStorage.setItem('proposalPassword', 'rebel');
+            }
+            
+            createHearts();
+            musicToggle.addEventListener('click', toggleMusic);
+            passwordSubmit.addEventListener('click', checkPassword);
+            passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') checkPassword();
+            });
+            beginBtn.addEventListener('click', startJourney);
+            answerBtns.forEach(btn => {
+                btn.addEventListener('click', handleAnswer);
+            });
+            nextQuestionBtn.addEventListener('click', showNextQuestion);
+            submitTextAnswer.addEventListener('click', handleTextAnswer);
+            ourSong.addEventListener('change', handleSongSelection);
+            submitSongAnswer.addEventListener('click', handleSongAnswer);
+            proposalBtn.addEventListener('click', showCountdown);
+            yesBtn.addEventListener('click', showYesResponse);
+            noBtn.addEventListener('click', showNoResponse);
+            closeNoModalBtn.addEventListener('click', () => {
+                noModal.classList.add('hidden');
+            });
+            restartBtn.addEventListener('click', restartJourney);
+            noBtn.addEventListener('mouseover', moveNoButton);
+            downloadKeepsake.addEventListener('click', downloadKeepsakePDF);
+            contactMe.addEventListener('click', () => {
+                window.open('https://www.instagram.com/zubair.8.0', '_blank');
+            });
+            submitGuestbook.addEventListener('click', submitGuestbookEntry);
+            playVoiceover.addEventListener('click', () => {
+                const voiceover = new Audio('https://www.bensound.com/bensound-music/bensound-sweet.mp3');
+                voiceover.play();
+            });
+            pauseVoiceover.addEventListener('click', () => {
+                const voiceover = document.querySelector('audio');
+                if (voiceover) voiceover.pause();
+            });
+        });
+        
+        function checkPassword() {
+            const password = passwordInput.value.trim().toLowerCase();
+            const correctPassword = localStorage.getItem('proposalPassword') || 'rebel';
+            
+            if (password === correctPassword) {
+                passwordOverlay.style.display = 'none';
+                document.getElementById('landing').classList.remove('hidden');
+            } else {
+                passwordError.classList.remove('hidden');
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        }
+        
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '<i class="fas fa-heart"></i>';
+                    heart.className = 'particle text-pink-500 opacity-80';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = Math.random() * 100 + 'vh';
+                    const size = Math.random() * 25 + 15;
+                    heart.style.fontSize = size + 'px';
+                    const duration = Math.random() * 12 + 6;
+                    heart.style.animation = `floating ${duration}s infinite ease-in-out`;
+                    heartsContainer.appendChild(heart);
+                }, i * 200);
+            }
+        }
+        
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-volume-up text-2xl"></i>';
+            } else {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-volume-mute text-2xl"></i>';
+            }
+        }
+        
+        function startJourney() {
+            document.getElementById('landing').classList.add('hidden');
+            memoryLaneSection.classList.remove('hidden');
+            updateProgressBar();
+            bgMusic.volume = 0.3;
+            const playPromise = bgMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                });
+            }
+        }
+        
+        function handleAnswer(e) {
+            const answerNum = e.target.getAttribute('data-answer');
+            const questionText = document.querySelector(`#question${currentQuestion} h3`).textContent;
+            const answerText = e.target.textContent || e.target.querySelector('span').textContent;
+            userAnswers[`question${currentQuestion}`] = {
+                question: questionText,
+                answer: answerText
+            };
+            document.getElementById(`question${currentQuestion}`).classList.add('hidden');
+            responseText.textContent = responses[currentQuestion - 1];
+            answerResponse.classList.remove('hidden');
+            updateProgressBar();
+        }
+        
+        function handleTextAnswer() {
+            const answer = loveAboutUs.value.trim();
+            if (answer) {
+                const questionText = document.querySelector(`#question${currentQuestion} h3`).textContent;
+                userAnswers[`question${currentQuestion}`] = {
+                    question: questionText,
+                    answer: answer
+                };
+                document.getElementById(`question${currentQuestion}`).classList.add('hidden');
+                responseText.textContent = responses[currentQuestion - 1];
+                answerResponse.classList.remove('hidden');
+                updateProgressBar();
+            } else {
+                alert("Please share your heart before submitting! 💖");
+            }
+        }
+        
+        function handleSongSelection() {
+            if (ourSong.value === 'other') {
+                otherSongContainer.classList.remove('hidden');
+            } else {
+                otherSongContainer.classList.add('hidden');
+            }
+        }
+        
+        function handleSongAnswer() {
+            let answer;
+            if (ourSong.value === 'other') {
+                answer = document.getElementById('otherSong').value.trim();
+            } else {
+                answer = ourSong.options[ourSong.selectedIndex].text;
+            }
+            if (answer) {
+                const questionText = document.querySelector(`#question${currentQuestion} h3`).textContent;
+                userAnswers[`question${currentQuestion}`] = {
+                    question: questionText,
+                    answer: answer
+                };
+                document.getElementById(`question${currentQuestion}`).classList.add('hidden');
+                responseText.textContent = responses[currentQuestion - 1];
+                answerResponse.classList.remove('hidden');
+                updateProgressBar();
+            } else {
+                alert("Please pick or write our song! 🎶");
+            }
+        }
+        
+        function showNextQuestion() {
+            answerResponse.classList.add('hidden');
+            currentQuestion++;
+            if (currentQuestion <= totalQuestions) {
+                document.getElementById(`question${currentQuestion}`).classList.remove('hidden');
+            } else {
+                memoryLaneSection.classList.add('hidden');
+                loveLetterSection.classList.remove('hidden');
+                typeWriterEffect();
+            }
+        }
+        
+        function typeWriterEffect() {
+            const typedText = document.getElementById('typedText');
+            const paragraphs = typedText.querySelectorAll('p');
+            typedText.innerHTML = '';
+            paragraphs.forEach((para, index) => {
+                setTimeout(() => {
+                    typedText.appendChild(para);
+                    para.style.animation = 'fadeIn 1.5s';
+                }, index * 1500);
+            });
+        }
+        
+        function showCountdown() {
+            loveLetterSection.classList.add('hidden');
+            countdownSection.classList.remove('hidden');
+            const countdownDate = new Date();
+            countdownDate.setSeconds(countdownDate.getSeconds() + 30);
+            const countdown = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                countdownDays.textContent = days.toString().padStart(2, '0');
+                countdownHours.textContent = hours.toString().padStart(2, '0');
+                countdownMinutes.textContent = minutes.toString().padStart(2, '0');
+                countdownSeconds.textContent = seconds.toString().padStart(2, '0');
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    showProposal();
+                }
+            }, 1000);
+        }
+        
+        function showProposal() {
+            countdownSection.classList.add('hidden');
+            proposalSection.classList.remove('hidden');
+            setTimeout(() => {
+                proposalQuestion.classList.remove('hidden');
+            }, 2000);
+        }
+        
+        function showYesResponse() {
+            proposalSection.classList.add('hidden');
+            yesResponseSection.classList.remove('hidden');
+            createConfetti();
+            let recapHTML = '';
+            for (const key in userAnswers) {
+                recapHTML += `
+                    <div class="mb-4 pb-4 border-b border-pink-300">
+                        <p class="font-semibold text-lg">${userAnswers[key].question}</p>
+                        <p class="text-pink-600">${userAnswers[key].answer}</p>
+                    </div>
+                `;
+            }
+            answerRecap.innerHTML = recapHTML;
+        }
+        
+        function showNoResponse() {
+            noModal.classList.remove('hidden');
+        }
+        
+        function restartJourney() {
+            yesResponseSection.classList.add('hidden');
+            document.getElementById('landing').classList.remove('hidden');
+            currentQuestion = 1;
+            document.querySelectorAll('.memory-card').forEach(card => {
+                card.classList.add('hidden');
+            });
+            document.getElementById('question1').classList.remove('hidden');
+            progressBar.style.width = '0%';
+            loveAboutUs.value = '';
+            ourSong.value = '';
+            otherSongContainer.classList.add('hidden');
+            document.getElementById('otherSong').value = '';
+            window.scrollTo(0, 0);
+        }
+        
+        function updateProgressBar() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        function moveNoButton() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth) - 100;
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight) - 100;
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+        
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#ff8e53', '#f97316', '#f59e0b', '#10b981', '#3b82f6', '#d946ef', '#8b5cf6'];
+            for (let i = 0; i < 200; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.width = Math.random() * 12 + 6 + 'px';
+                    confetti.style.height = Math.random() * 12 + 6 + 'px';
+                    confetti.style.animationDuration = Math.random() * 4 + 3 + 's';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 6000);
+                }, i * 15);
+            }
+        }
+        
+        function downloadKeepsakePDF() {
+            alert("Downloading our love story PDF! 💌");
+        }
+        
+        function submitGuestbookEntry() {
+            const message = guestbookMessage.value.trim();
+            if (message) {
+                const entry = document.createElement('div');
+                entry.className = 'guestbook-entry';
+                entry.innerHTML = `
+                    <p class="text-gray-700">"${message}"</p>
+                    <p class="text-sm text-gray-500 mt-3">- ${new Date().toLocaleDateString()}</p>
+                `;
+                guestbookEntries.prepend(entry);
+                guestbookMessage.value = '';
+                alert("Your message is saved forever, my love! 💖");
+            } else {
+                alert("Please write something sweet first! 💌");
+            }
+        }
+    </script>
+</body>
+</html>
