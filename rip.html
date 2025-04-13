@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey to Forever</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffeef8 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .handwriting {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .heartbeat {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .float {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #f472b6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #f472b6; }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .love-letter {
+            background: url('https://images.unsplash.com/photo-1590071089560-2b6a1b1b3b3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .love-letter:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.85);
+            border-radius: 0.5rem;
+            z-index: 0;
+        }
+        
+        .love-letter-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #f3e8ff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ec4899, #f472b6);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+        
+        .heart-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 8s linear forwards;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .memory-card {
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .memory-card:hover {
+            transform: rotateY(10deg) scale(1.05);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 9999;
+            animation: confetti 5s ease-in-out;
+        }
+        
+        @keyframes confetti {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .ring-spin {
+            animation: ringSpin 2s ease-in-out infinite;
+        }
+        
+        @keyframes ringSpin {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-heart {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-heart:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255,255,255,.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn-heart:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button id="musicToggle" class="w-12 h-12 rounded-full bg-pink-500 text-white flex items-center justify-center shadow-lg hover:bg-pink-600 transition">
+            <i class="fas fa-music text-xl"></i>
+        </button>
+    </div>
+    
+    <!-- Landing Page -->
+    <section id="landing" class="section bg-gray-900 text-white">
+        <div class="parallax bg-[url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')]"></div>
+        <div class="bg-overlay"></div>
+        <div class="content text-center px-4 max-w-4xl mx-auto fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 handwriting">My Love,</h1>
+            <p class="text-xl md:text-2xl mb-8">This is the story of us...</p>
+            <button id="beginBtn" class="btn-heart bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-xl font-medium transition transform hover:scale-105 shadow-xl">
+                Begin Our Journey <i class="fas fa-heart ml-2 heartbeat"></i>
+            </button>
+        </div>
+        
+        <!-- Floating Hearts -->
+        <div id="heartsContainer"></div>
+    </section>
+    
+    <!-- Memory Lane - Questions -->
+    <section id="memory-lane" class="section bg-gradient-to-br from-pink-50 to-purple-50 hidden">
+        <div class="content max-w-4xl mx-auto px-4 w-full">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 handwriting">Our Memory Lane</h2>
+                <p class="text-gray-600">Let's walk through some of our most precious moments together</p>
+            </div>
+            
+            <div class="progress-container mb-8">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            
+            <!-- Question 1 -->
+            <div id="question1" class="memory-card bg-white p-8 rounded-xl shadow-lg mb-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="First Date" class="w-full h-48 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h3 class="text-xl font-semibold mb-4">What was your first impression of me?</h3>
+                        <div class="space-y-3">
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="1">"I thought you were cute but a little shy"</button>
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="2">"You had the most beautiful smile"</button>
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="3">"I knew there was something special about you"</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div id="question2" class="memory-card bg-white p-8 rounded-xl shadow-lg mb-8 hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1494774157365-7e09e8b5a16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Adventure" class="w-full h-48 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h3 class="text-xl font-semibold mb-4">Which of our adventures is your favorite memory?</h3>
+                        <div class="space-y-3">
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="1">"Our weekend getaway to the mountains"</button>
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="2">"That time we got lost but found an amazing little café"</button>
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="3">"Every quiet morning we spent together with coffee"</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div id="question3" class="memory-card bg-white p-8 rounded-xl shadow-lg mb-8 hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Beach" class="w-full h-48 object-cover rounded-lg shadow">
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <h3 class="text-xl font-semibold mb-4">What's one thing you love about us?</h3>
+                        <div class="space-y-3">
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="1">"How we can be completely ourselves with each other"</button>
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="2">"The way you understand me without words"</button>
+                            <button class="answer-btn w-full text-left bg-gray-100 hover:bg-pink-100 p-3 rounded-lg transition" data-answer="3">"Our shared dreams for the future"</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Response to Answers -->
+            <div id="answerResponse" class="bg-pink-50 p-6 rounded-xl shadow-lg hidden">
+                <div class="flex items-start">
+                    <div class="mr-4 text-pink-500 text-2xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div>
+                        <p id="responseText" class="text-gray-700"></p>
+                    </div>
+                </div>
+                <button id="nextQuestionBtn" class="mt-4 bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-medium transition">
+                    Continue Our Journey <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Love Letter -->
+    <section id="love-letter" class="section bg-gradient-to-br from-purple-100 to-pink-100 hidden">
+        <div class="content max-w-3xl mx-auto px-4 w-full">
+            <div class="love-letter">
+                <div class="love-letter-content">
+                    <h2 class="text-3xl font-bold mb-6 handwriting text-center">My Dearest Love,</h2>
+                    
+                    <div id="typedText" class="text-lg leading-relaxed">
+                        <p class="mb-4">From the moment our eyes first met, I knew my life would never be the same.</p>
+                        <p class="mb-4">That spark between us ignited a flame that has only grown brighter with each passing day. Remember our first date? How nervous we both were, yet how effortlessly the conversation flowed?</p>
+                        <p class="mb-4">Through all our adventures, quiet moments, laughter and tears, one truth has remained constant - my love for you deepens with every sunrise we share.</p>
+                        <p class="mb-4">You've seen me at my best and my worst, loved me through my mistakes, celebrated my victories as your own. In your eyes, I've found my home. In your arms, I've found my peace.</p>
+                        <p class="handwriting text-2xl text-pink-600 text-center mt-8">With all my heart,</p>
+                        <p class="handwriting text-2xl text-pink-600 text-center">Your soulmate</p>
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <button id="proposalBtn" class="btn-heart bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-xl font-medium transition transform hover:scale-105 shadow-xl">
+                            One More Step, My Love <i class="fas fa-heart ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Proposal -->
+    <section id="proposal" class="section bg-gray-900 text-white hidden">
+        <div class="parallax bg-[url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')]"></div>
+        <div class="bg-overlay"></div>
+        <div class="content text-center px-4 max-w-4xl mx-auto">
+            <div class="mb-12">
+                <div class="w-32 h-32 mx-auto ring rounded-full bg-gradient-to-br from-pink-200 to-pink-300 flex items-center justify-center shadow-lg float ring-spin">
+                    <img src="https://images.unsplash.com/photo-1603984362497-2f5a1a3b3b0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Ring" class="w-28 h-28 rounded-full object-cover">
+                </div>
+            </div>
+            
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 handwriting">You're My Everything</h2>
+            <p class="text-xl md:text-2xl mb-8">I want to spend forever with you</p>
+            
+            <div id="proposalQuestion" class="hidden">
+                <h3 class="text-5xl md:text-7xl font-bold mb-8 handwriting text-pink-300">Will You Marry Me?</h3>
+                
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mt-12">
+                    <button id="yesBtn" class="btn-heart bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-xl font-medium transition transform hover:scale-105 shadow-xl">
+                        Yes, Forever! <i class="fas fa-heart ml-2"></i>
+                    </button>
+                    <button id="noBtn" class="btn-heart bg-gray-600 hover:bg-gray-700 text-white px-8 py-4 rounded-full text-xl font-medium transition transform hover:scale-105 shadow-xl">
+                        I Need More Time
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Yes Response -->
+    <section id="yes-response" class="section bg-gradient-to-br from-pink-100 to-purple-100 hidden">
+        <div class="content text-center max-w-4xl mx-auto px-4">
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-xl">
+                <div class="text-8xl text-pink-500 mb-6">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 handwriting text-pink-600">You Said Yes!</h2>
+                <p class="text-xl text-gray-700 mb-8">My heart is overflowing with joy! This is the beginning of our forever. I promise to love you more each day than I did the day before.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <div class="text-3xl text-pink-500 mb-2">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">My Promise</h3>
+                        <p class="text-sm text-gray-600">To love you unconditionally through all of life's adventures</p>
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <div class="text-3xl text-pink-500 mb-2">
+                            <i class="fas fa-laugh-beam"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Our Joy</h3>
+                        <p class="text-sm text-gray-600">To cherish every moment of laughter and happiness we share</p>
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <div class="text-3xl text-pink-500 mb-2">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Our Future</h3>
+                        <p class="text-sm text-gray-600">To build a home filled with love, warmth and beautiful memories</p>
+                    </div>
+                </div>
+                
+                <button id="restartBtn" class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full font-medium transition shadow-lg">
+                    Relive This Moment <i class="fas fa-redo ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- No Response -->
+    <div id="no-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 text-center">
+            <div class="text-6xl text-pink-500 mb-4">
+                <i class="fas fa-heart-broken"></i>
+            </div>
+            <h3 class="text-3xl font-bold handwriting text-pink-600 mb-4">I Understand</h3>
+            <p class="text-gray-700 mb-6">I'll wait for you, my love. My heart is yours whenever you're ready. Take all the time you need.</p>
+            <button id="close-no-modal" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full font-medium transition">
+                Close
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const beginBtn = document.getElementById('beginBtn');
+        const memoryLaneSection = document.getElementById('memory-lane');
+        const loveLetterSection = document.getElementById('love-letter');
+        const proposalSection = document.getElementById('proposal');
+        const yesResponseSection = document.getElementById('yes-response');
+        const noModal = document.getElementById('no-modal');
+        const closeNoModalBtn = document.getElementById('close-no-modal');
+        const restartBtn = document.getElementById('restartBtn');
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        const progressBar = document.getElementById('progressBar');
+        const proposalBtn = document.getElementById('proposalBtn');
+        const proposalQuestion = document.getElementById('proposalQuestion');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const answerBtns = document.querySelectorAll('.answer-btn');
+        const answerResponse = document.getElementById('answerResponse');
+        const responseText = document.getElementById('responseText');
+        const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+        const heartsContainer = document.getElementById('heartsContainer');
+        
+        // Current question tracker
+        let currentQuestion = 1;
+        const totalQuestions = 3;
+        const responses = [
+            "That moment means the world to me too. I remember how my heart raced when I first saw you.",
+            "That's one of my favorite memories too! I'll never forget the way your eyes sparkled with joy.",
+            "You put into words exactly how I feel. Our connection is something truly special."
+        ];
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create floating hearts
+            createHearts();
+            
+            // Set current year if needed
+            // document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Music control
+            musicToggle.addEventListener('click', toggleMusic);
+            
+            // Begin journey
+            beginBtn.addEventListener('click', startJourney);
+            
+            // Answer buttons
+            answerBtns.forEach(btn => {
+                btn.addEventListener('click', handleAnswer);
+            });
+            
+            // Next question button
+            nextQuestionBtn.addEventListener('click', showNextQuestion);
+            
+            // Proceed to proposal
+            proposalBtn.addEventListener('click', showProposal);
+            
+            // Proposal buttons
+            yesBtn.addEventListener('click', showYesResponse);
+            noBtn.addEventListener('click', showNoResponse);
+            
+            // Close no modal
+            closeNoModalBtn.addEventListener('click', () => {
+                noModal.classList.add('hidden');
+            });
+            
+            // Restart journey
+            restartBtn.addEventListener('click', restartJourney);
+            
+            // No button hover effect
+            noBtn.addEventListener('mouseover', moveNoButton);
+        });
+        
+        // Functions
+        function createHearts() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '<i class="fas fa-heart"></i>';
+                    heart.className = 'particle text-pink-400 opacity-70';
+                    
+                    // Random position
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = Math.random() * 100 + 'vh';
+                    
+                    // Random size
+                    const size = Math.random() * 20 + 10;
+                    heart.style.fontSize = size + 'px';
+                    
+                    // Random animation duration
+                    const duration = Math.random() * 10 + 5;
+                    heart.style.animation = `floating ${duration}s infinite ease-in-out`;
+                    
+                    heartsContainer.appendChild(heart);
+                }, i * 300);
+            }
+        }
+        
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicToggle.innerHTML = '<i class="fas fa-volume-up text-xl"></i>';
+            } else {
+                bgMusic.pause();
+                musicToggle.innerHTML = '<i class="fas fa-volume-mute text-xl"></i>';
+            }
+        }
+        
+        function startJourney() {
+            document.getElementById('landing').classList.add('hidden');
+            memoryLaneSection.classList.remove('hidden');
+            updateProgressBar();
+            
+            // Try to play music (may need user interaction first)
+            bgMusic.volume = 0.3;
+            const playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                });
+            }
+        }
+        
+        function handleAnswer(e) {
+            const answerNum = e.target.getAttribute('data-answer');
+            document.getElementById(`question${currentQuestion}`).classList.add('hidden');
+            
+            // Show response
+            responseText.textContent = responses[currentQuestion - 1];
+            answerResponse.classList.remove('hidden');
+            
+            // Update progress bar
+            updateProgressBar();
+        }
+        
+        function showNextQuestion() {
+            answerResponse.classList.add('hidden');
+            currentQuestion++;
+            
+            if (currentQuestion <= totalQuestions) {
+                document.getElementById(`question${currentQuestion}`).classList.remove('hidden');
+            } else {
+                // All questions answered, show love letter
+                memoryLaneSection.classList.add('hidden');
+                loveLetterSection.classList.remove('hidden');
+                
+                // Typewriter effect for love letter
+                typeWriterEffect();
+            }
+        }
+        
+        function typeWriterEffect() {
+            const typedText = document.getElementById('typedText');
+            const paragraphs = typedText.querySelectorAll('p');
+            
+            typedText.innerHTML = '';
+            
+            paragraphs.forEach((para, index) => {
+                setTimeout(() => {
+                    typedText.appendChild(para);
+                    para.style.animation = 'fadeIn 1.5s';
+                }, index * 2000);
+            });
+        }
+        
+        function showProposal() {
+            loveLetterSection.classList.add('hidden');
+            proposalSection.classList.remove('hidden');
+            
+            // Show proposal question after a delay
+            setTimeout(() => {
+                proposalQuestion.classList.remove('hidden');
+            }, 2000);
+        }
+        
+        function showYesResponse() {
+            proposalSection.classList.add('hidden');
+            yesResponseSection.classList.remove('hidden');
+            createConfetti();
+        }
+        
+        function showNoResponse() {
+            noModal.classList.remove('hidden');
+        }
+        
+        function restartJourney() {
+            yesResponseSection.classList.add('hidden');
+            document.getElementById('landing').classList.remove('hidden');
+            
+            // Reset questions
+            currentQuestion = 1;
+            document.querySelectorAll('.memory-card').forEach(card => {
+                card.classList.add('hidden');
+            });
+            document.getElementById('question1').classList.remove('hidden');
+            
+            // Reset progress bar
+            progressBar.style.width = '0%';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function updateProgressBar() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        function moveNoButton() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth) - 100;
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight) - 100;
+            
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+        
+        function createConfetti() {
+            const colors = ['#ec4899', '#f472b6', '#f97316', '#f59e0b', '#10b981', '#3b82f6', '#6366f1', '#8b5cf6'];
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.width = Math.random() * 10 + 5 + 'px';
+                    confetti.style.height = Math.random() * 10 + 5 + 'px';
+                    confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 20);
+            }
+        }
+    </script>
+</body>
+</html>
